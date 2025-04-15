@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickHouse-FlatFile Ingestor</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Ingestor</h1>
+        
+        <div class="source-selector">
+            <label>
+                <input type="radio" name="source" value="clickhouse" checked> ClickHouse
+            </label>
+            <label>
+                <input type="radio" name="source" value="file"> Flat File
+            </label>
+        </div>
+
+        <div id="clickhouse-config" class="connection-config">
+            <h2>ClickHouse Connection</h2>
+            <div class="form-group">
+                <label>Host:</label>
+                <input type="text" id="ch-host" placeholder="localhost">
+            </div>
+            <div class="form-group">
+                <label>Port:</label>
+                <input type="text" id="ch-port" placeholder="8123">
+            </div>
+            <div class="form-group">
+                <label>Database:</label>
+                <input type="text" id="ch-database" placeholder="default">
+            </div>
+            <div class="form-group">
+                <label>User:</label>
+                <input type="text" id="ch-user" placeholder="default">
+            </div>
+            <div class="form-group">
+                <label>JWT Token:</label>
+                <input type="password" id="ch-token">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="ch-secure"> Secure (HTTPS)
+                </label>
+            </div>
+            <button id="ch-connect">Connect</button>
+        </div>
+
+        <div id="file-config" class="connection-config" style="display:none">
+            <h2>Flat File Configuration</h2>
+            <div class="form-group">
+                <label>File Path:</label>
+                <input type="text" id="file-path" placeholder="/path/to/file.csv">
+            </div>
+            <div class="form-group">
+                <label>Delimiter:</label>
+                <select id="file-delimiter">
+                    <option value=",">Comma (,)</option>
+                    <option value=";">Semicolon (;)</option>
+                    <option value="\t">Tab (\t)</option>
+                    <option value="|">Pipe (|)</option>
+                </select>
+            </div>
+            <button id="file-load">Load File</button>
+        </div>
+
+        <div id="schema-section" style="display:none">
+            <h2>Select Tables and Columns</h2>
+            <div id="tables-list"></div>
+            <div id="columns-list"></div>
+            <button id="start-transfer">Start Transfer</button>
+        </div>
+
+        <div id="status-section">
+            <h2>Status</h2>
+            <div id="status-message"></div>
+            <div id="progress-bar"></div>
+            <div id="result-message"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
