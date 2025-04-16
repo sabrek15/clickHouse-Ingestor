@@ -1,0 +1,25 @@
+# ClickHouse Ingestion Assignment - Prompt Log  
+
+## 1. Project Understanding & Setup  
+- "Explain how ClickHouse ingests data differently from traditional databases."  
+- "What are the best open-source tools to build a ClickHouse data pipeline?"  
+- "Provide a step-by-step guide to set up ClickHouse locally for testing ingestion."  
+
+## 2. Code Implementation  
+- "Generate a Go script to insert batch data into ClickHouse using `clickhouse-go`."  
+- "Optimize this ClickHouse `INSERT` query for faster bulk loading: [PASTE_QUERY]."  
+- "How to use asynchronous inserts in ClickHouse to improve throughput?"  
+
+## 3. Error Handling & Validation  
+- "Implement data type validation before inserting into ClickHouse (Go example)."  
+- "Write a function to log failed inserts and retry them later."  
+- "How to backfill missing data in ClickHouse without duplicates?"  
+
+## 4. Testing & Debugging  
+- "Generate test cases for a ClickHouse ingestion pipeline (happy path, edge cases)."  
+- "Why am I getting 'Memory limit exceeded' during ingestion, and how to fix it?"  
+- "Debugging slow inserts in ClickHouse: Key metrics to check."  
+
+## 5. Documentation & Reporting  
+- "Write a README template for a ClickHouse ingestor project."  
+- "How to explain my ingestion architecture to non-technical stakeholders?"
